@@ -1,0 +1,4 @@
+epubs/
+__pycache__/
+*.pyc
+.vscode/
