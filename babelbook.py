@@ -5,9 +5,9 @@ The goal is to read books in a web browser and lean on the browser's built-in
 translation. Every output page is a real, separately loaded HTML file, which is
 what browser translation handles most reliably.
 
-    babelbook.py ~/Downloads/alice.epub              -> ~/ebooks_html/alice/
+    babelbook.py ~/Downloads/alice.epub              -> ~/babelbook_html/alice/
     babelbook.py book.pdf --out-root ~/somewhere
-    babelbook.py a.epub b.epub --serve               -> convert, then serve ~/ebooks_html
+    babelbook.py a.epub b.epub --serve               -> convert, then serve ~/babelbook_html
     babelbook.py --serve                             -> just serve what is already there
 
 Pages are cut by amount of text (default about 2000 words), only at block
@@ -48,7 +48,7 @@ from urllib.parse import unquote, urlsplit
 
 from lxml import etree
 
-DEFAULT_OUT_ROOT = Path.home() / "ebooks_html"
+DEFAULT_OUT_ROOT = Path.home() / "babelbook_html"
 
 # Block-level tags we never split and never descend into.
 ATOMIC_TAGS = {

@@ -24,7 +24,7 @@ Needs Python 3.10+ with `lxml`; PDF additionally needs `pymupdf`.
 ```bash
 pip install -r requirements.txt            # or use an existing venv that has lxml
 
-# convert; output goes to ~/ebooks_html/<book>/
+# convert; output goes to ~/babelbook_html/<book>/ (change with --out-root)
 python babelbook.py epubs/alice.epub
 python babelbook.py epubs/*.epub some-book.pdf
 
@@ -39,7 +39,7 @@ python babelbook.py --serve --host 0.0.0.0 --port 8000   # reachable from phone/
 Options:
 
 ```
---out-root DIR      where the HTML goes (default ~/ebooks_html)
+--out-root DIR      where the HTML goes (default ~/babelbook_html)
 --page-words N      target words per page (default 2000)
 --min-words N       no chapter page break before this many words (default 300)
 --no-tables         PDF: skip table detection (faster)
@@ -48,12 +48,12 @@ Options:
 Output layout:
 
 ```
-~/ebooks_html/index.html              library: every converted book
-~/ebooks_html/reader.css, reader.js   shared reader chrome
-~/ebooks_html/<slug>/index.html       book page: cover, contents, "continue reading"
-~/ebooks_html/<slug>/p001.html ...    the pages
-~/ebooks_html/<slug>/images/          images from the book
-~/ebooks_html/<slug>/book.json        metadata for the library page
+~/babelbook_html/index.html              library: every converted book
+~/babelbook_html/reader.css, reader.js   shared reader chrome
+~/babelbook_html/<slug>/index.html       book page: cover, contents, "continue reading"
+~/babelbook_html/<slug>/p001.html ...    the pages
+~/babelbook_html/<slug>/images/          images from the book
+~/babelbook_html/<slug>/book.json        metadata for the library page
 ```
 
 ## Reader
